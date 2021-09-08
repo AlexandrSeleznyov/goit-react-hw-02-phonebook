@@ -37,7 +37,7 @@ export default class ContactForm extends React.Component {
 
   render() {
     return (
-      <form class={s.contactForm} onSubmit={this.handleSubmit}>
+      <form className={s.contactForm} onSubmit={this.handleSubmit}>
         <label>
           Name:
           <input
