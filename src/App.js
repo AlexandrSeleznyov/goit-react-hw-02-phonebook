@@ -51,13 +51,22 @@ export default class App extends React.Component {
     );
   };
 
+  deleteContact = (data) => {
+    return this.setState((prevState) => ({
+      contacts: prevState.contacts.filter((contact) => contact.id !== data.id),
+    }));
+  };
+
   render() {
     return (
       <>
         <h1>Phonebook</h1>
         <ContactForm formSubmitHandler={this.formSubmitHandler} />
         <h1>Contacts</h1>
-        <Contacts visibleContacts={this.visibleContacts()} />
+        <Contacts
+          visibleContacts={this.visibleContacts()}
+          deleteContact={this.deleteContact}
+        />
 
         <Filter
           filter={this.state.filter}
